@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Definicja struktury Punkt10
+
 struct Punkt10 {
-    float wymiary[10]; // Tablica do przechowywania 10 wspó³rzêdnych
+    float wymiary[10]; 
 };
 
-// Funkcja do przepisania zawartoœci tablicy tab1 do tab2
+
 void przepiszTablice(struct Punkt10* tab1, struct Punkt10* tab2, int rozmiar) {
     for (int i = 0; i < rozmiar; i++) {
         for (int j = 0; j < 10; j++) {
@@ -18,21 +18,21 @@ void przepiszTablice(struct Punkt10* tab1, struct Punkt10* tab2, int rozmiar) {
 int main() {
     int n;
 
-    // Wczytanie liczby punktów
-    printf("Podaj liczbê punktów: ");
+    
+    printf("Podaj liczbÄ™ punktÃ³w: ");
     scanf_s("%d", &n);
 
-    // Dynamiczna alokacja tablic Punkt10
+    
     struct Punkt10* tab1 = (struct Punkt10*)malloc(n * sizeof(struct Punkt10));
     struct Punkt10* tab2 = (struct Punkt10*)malloc(n * sizeof(struct Punkt10));
 
     if (tab1 == NULL || tab2 == NULL) {
-        printf("B³¹d alokacji pamiêci!\n");
+        printf("BÅ‚Ä…d alokacji pamiÄ™ci!\n");
         return 1;
     }
 
-    // Wczytanie wspó³rzêdnych punktów
-    printf("Podaj wspó³rzêdne punktów (10 wspó³rzêdnych dla ka¿dego punktu):\n");
+    
+    printf("Podaj wspÃ³Å‚rzÄ™dne punktÃ³w (10 wspÃ³Å‚rzÄ™dnych dla kaÅ¼dego punktu):\n");
     for (int i = 0; i < n; i++) {
         printf("Punkt %d:\n", i + 1);
         for (int j = 0; j < 10; j++) {
@@ -44,8 +44,8 @@ int main() {
     // Przepisanie tablicy tab1 do tab2
     przepiszTablice(tab1, tab2, n);
 
-    // Wyœwietlenie zawartoœci tablicy tab2
-    printf("\nZawartoœæ tablicy tab2 (skopiowana):\n");
+    // WyÅ›wietlenie zawartoÅ›ci tablicy tab2
+    printf("\nZawartoÅ›Ä‡ tablicy tab2 (skopiowana):\n");
     for (int i = 0; i < n; i++) {
         printf("Punkt %d: ", i + 1);
         for (int j = 0; j < 10; j++) {
@@ -54,7 +54,7 @@ int main() {
         printf("\n");
     }
 
-    // Zwolnienie pamiêci
+    // Zwolnienie pamiÄ™ci
     free(tab1);
     free(tab2);
 
